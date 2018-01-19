@@ -89,6 +89,21 @@
 						"PropagateAtLaunch": true
 					},
 					{
+						"Key": "SystemProperties",
+						"Value": {
+							"Fn::Join": [
+								" ",
+								[
+								    {"Fn::Join": ["", ["-Dconfig.server.jdbc.username=", {"Ref": "JdbcUsername"}]]},
+								    {"Fn::Join": ["", ["-Dconfig.server.jdbc.password=", {"Ref": "JdbcPassword"}]]},
+                                     {"Fn::Join": ["", ["-Dconfig.server.jdbc.url=", {"Ref": "JdbcUrl"}]]},
+                                     {"Fn::Join": ["", ["-Dconfig.server.jdbc.driver.class.name=", {"Ref": "JdbcDriverClassName"}]]}
+							    ]
+							]
+						},
+						"PropagateAtLaunch": true
+					},
+					{
 						"Key": "GroupId",
 						"Value": {
 							"Ref": "GroupId"
@@ -273,6 +288,23 @@
 			"Type": "String",
 			"Default": "ec2-spring-boot-node",
 			"Description": "IAM Role for the EC2 instance"
-		}
+		},
+        "JdbcUsername": {
+            "Type": "String",
+            "Description": "Jdbc Username"
+        },
+        "JdbcPassword": {
+            "Type": "String",
+            "Description": "Jdbc password"
+        },
+        "JdbcUrl": {
+            "Type": "String",
+            "Description": "Jdbc Username"
+        },
+        "JdbcDriverClassName": {
+            "Type": "String",
+            "Default": "com.mysql.jdbc.Driver",
+            "Description": "Jdbc Driver"
+        }
 	}
 }
