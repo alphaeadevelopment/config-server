@@ -1,0 +1,5 @@
+{"properties": [{
+  "name": "config.server.jdbc.driver.class.name",
+  "type": "java.lang.String",
+  "description": "Driver for config server jdbc connection"
+}]}
