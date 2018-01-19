@@ -5,7 +5,7 @@
 
   <groupId>uk.alphaea.dev</groupId>
   <artifactId>config-server</artifactId>
-  <version>0.0.4</version>
+  <version>0.0.3</version>
   <packaging>jar</packaging>
 
   <name>config-server</name>
