@@ -71,6 +71,8 @@ then
 fi
 
 version=`xml-js pom.xml --compact | jq .project.version._text | awk -F "\"" '{print $2}'`
+git tag v${version}
+git push --tags
 
 AWS_SDK_LOAD_CONFIG=1 node-cf-deploy update-stack \
   --name ${stack_name} \
