@@ -301,7 +301,7 @@
 		},
 		"InstancePort": {
 			"Type": "Number",
-			"Default": "8080",
+			"Default": "8888",
 			"Description": "Port that the EC2 instances expose to the load balancer"
 		},
 		"IamRole": {

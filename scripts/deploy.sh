@@ -89,3 +89,4 @@ AWS_SDK_LOAD_CONFIG=1 node-cf-deploy update-stack \
   -S || exit_error
  
  node-cf-deploy terminate-stack-instances -n ${stack_name}
+ 
