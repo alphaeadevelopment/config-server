@@ -230,33 +230,53 @@
 		}
 	},
 	"Parameters": {
+        "Ami": {
+            "Type": "String",
+            "Default": "ami-e487179d"
+        },
+        "InstanceType": {
+            "Type": "String",
+            "Default": "t2.micro",
+            "AllowedValues": [
+                "t2.micro",
+                "m1.small",
+                "m1.large"
+            ],
+            "Description": "Enter t2.micro, m1.small, or m1.large. Default is t2.micro."
+        },
+        "GroupId": {
+            "Type": "String",
+            "Default": "uk.alphaea.dev",
+            "Description": "Maven artifact group"
+        },
+        "ArtifactId": {
+            "Type": "String",
+            "Description": "Maven artifact id",
+            "Default": "config-server"
+        },
+        "BootstrapScriptName": {
+            "Type": "String",
+            "Default": "spring-boot-bootstrap",
+            "Description": "Name of Bootstrap script"
+        },
+        "InstancePort": {
+            "Type": "Number",
+            "Default": "8080",
+            "Description": "Port that the EC2 instances expose to the load balancer"
+        },
+        "IamRole": {
+            "Type": "String",
+            "Default": "ec2-spring-boot-node",
+            "Description": "IAM Role for the EC2 instance"
+        },
+        "JdbcDriverClassName": {
+            "Type": "String",
+            "Default": "com.mysql.jdbc.Driver",
+            "Description": "Jdbc Driver"
+        }
 		"SubDomainName": {
 			"Type": "String",
 			"Description": "The sub domain name part of <SubDomainName>.alphaea.uk"
-		},
-		"Ami": {
-			"Type": "String",
-			"Default": "ami-e487179d"
-		},
-		"InstanceType": {
-			"Type": "String",
-			"Default": "t2.micro",
-			"AllowedValues": [
-				"t2.micro",
-				"m1.small",
-				"m1.large"
-			],
-			"Description": "Enter t2.micro, m1.small, or m1.large. Default is t2.micro."
-		},
-		"GroupId": {
-			"Type": "String",
-			"Default": "uk.alphaea.dev",
-			"Description": "Maven artifact group"
-		},
-		"ArtifactId": {
-			"Type": "String",
-			"Description": "Maven artifact id",
-			"Default": "config-server"
 		},
 		"ArtifactVersion": {
 			"Type": "String",
@@ -274,21 +294,6 @@
 			"Type": "String",
 			"Description": "Environment"
 		},
-		"BootstrapScriptName": {
-			"Type": "String",
-			"Default": "spring-boot-bootstrap",
-			"Description": "Name of Bootstrap script"
-		},
-		"InstancePort": {
-			"Type": "Number",
-			"Default": "8080",
-			"Description": "Port that the EC2 instances expose to the load balancer"
-		},
-		"IamRole": {
-			"Type": "String",
-			"Default": "ec2-spring-boot-node",
-			"Description": "IAM Role for the EC2 instance"
-		},
         "JdbcUsername": {
             "Type": "String",
             "Description": "Jdbc Username"
@@ -301,10 +306,5 @@
             "Type": "String",
             "Description": "Jdbc Username"
         },
-        "JdbcDriverClassName": {
-            "Type": "String",
-            "Default": "com.mysql.jdbc.Driver",
-            "Description": "Jdbc Driver"
-        }
 	}
 }
