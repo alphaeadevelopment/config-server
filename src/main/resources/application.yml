@@ -18,3 +18,5 @@ config:
   server:
     jdbc:
       driver.class.name: com.mysql.jdbc.Driver
+
+cors.allowed.origins.regex: https?://(.*\.alphaea\.uk|localhost)(:\d{2,4})?
