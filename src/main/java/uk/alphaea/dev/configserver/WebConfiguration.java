@@ -14,7 +14,12 @@ public class WebConfiguration {
 		return new WebMvcConfigurerAdapter() {
 			@Override
 			public void addCorsMappings(CorsRegistry registry) {
-				registry.addMapping("/**").allowedOrigins("http://localhost:3000");
+				registry.addMapping("/**").allowedOrigins(
+						"http://localhost:3000",
+						"http://prr-test.alphaea.uk",
+						"http://auth-ms-test.alphaea.uk",
+						"http://budget-ms-test.alphaea.uk"
+						);
 			}
 		};
 	}
