@@ -16,9 +16,8 @@ public class WebConfiguration {
 			public void addCorsMappings(CorsRegistry registry) {
 				registry.addMapping("/**").allowedOrigins(
 						"http://localhost:3000",
-						"http://prr-test.alphaea.uk",
-						"http://auth-ms-test.alphaea.uk",
-						"http://budget-ms-test.alphaea.uk"
+						"http://*.alphaea.uk",
+						"https://*.alphaea.uk"
 						);
 			}
 		};
